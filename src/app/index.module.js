@@ -12,7 +12,6 @@
       'ngResource',
       'ui.router',
       'ui.bootstrap',
-      'toastr',
       'pascalprecht.translate',
       'tmh.dynamicLocale'
     ]);
