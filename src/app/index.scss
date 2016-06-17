@@ -4,6 +4,9 @@
  */
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
+@import 'components/scss/font';
+@import 'components/scss/variables';
+@import 'components/scss/mixins';
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies

@@ -1,2 +1,39 @@
-<div class="container">
-</div>
+<section class="main-container">
+	<side-menu list-items="vm.categoryList"></side-menu>
+	<header class="navbar navbar-default">
+	  <div class="navbar-header">
+	    <button type="button" class="btn btn-default show-menu">
+	      <i class="glyphicon glyphicon-menu-hamburger text-muted"></i>
+	    </button>
+	  </div>
+	  <search></search>
+	</header>
+
+	<section class="videos-section">
+		<ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
+     <li data-ng-repeat="video in vm.videos" class="grid">
+     	<a>
+     		<figure>
+            <img ng-src="{{video.pictures.sizes[2].link}}" class="grid-img" data-actual-width="{{videoItem.pictures.sizes[2].width}}"  data-actual-height="{{videoItem.pictures.sizes[2].height}}" />
+          <figcaption>{{video.name}}</figcaption>
+        </figure>
+     	</a>
+     </li>
+ 		</ul>
+ 		<div class="text-center pagination-container">
+ 			<uib-pagination
+	 			total-items="vm.totalItems" 
+	 			ng-model="vm.page" 
+	 			max-size="vm.maxSize" 
+	 			class="pagination-sm"
+	      items-per-page="vm.perPage" 
+	      ng-change="vm.changePage()" 
+	      boundary-link-numbers="true" 
+	      rotate="false"
+	      ag-options="vm.gridOptions">
+	     </uib-pagination>
+ 		</div>
+ 		
+	</section>
+
+</section>

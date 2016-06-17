@@ -13,7 +13,8 @@
       'ui.router',
       'ui.bootstrap',
       'pascalprecht.translate',
-      'tmh.dynamicLocale'
+      'tmh.dynamicLocale',
+      'angularGrid'
     ]);
 
 })();

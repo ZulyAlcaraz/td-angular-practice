@@ -3,10 +3,27 @@
 
   angular
     .module('tdAngularPractice')
-    .constant('LANGUAGES', {
+
+    .constant('API_VIMEO', {
+    	'token' : '3203355a36af0c7b46932508d90321eb',
+      'host'  : 'https://api.vimeo.com/'
+    })
+
+    .constant('PAGINATION', {
+      'maxSize' : 4,
+      'perPage' : 12
+    })
+
+    .constant('LOCALES', {
       'locales': {
-        'en_US': 'English'
+        'en': 'English',
+        'es': 'Español'
       },
-      'preferredLocale': 'en_US'
+      'localesMap' : {
+        'en_US' : 'en',
+        'en_UK' : 'en'
+      },
+      'preferredLocale': 'en'
     });
+    
 })();

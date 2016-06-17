@@ -1,0 +1,48 @@
+/**
+ *  Header styles
+ */
+
+.right-inner-addon {
+  position: relative;
+}
+.right-inner-addon input {
+	border-radius: 30px;
+  padding-right: 30px;    
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+  pointer-events: none;
+}
+.navbar-form {
+  border: 0 !important;
+}
+.navbar-toggle {
+	border: 0 !important;
+}
+.navbar-right {
+  margin-right: 0 !important;
+}
+.navbar-header {
+  line-height: 50px;
+  button {
+    border: none;
+    font-size: 20px;
+  }
+}
+.navbar-header {
+  @media (min-width: 992px) {
+    display: none;
+  }
+  @media (max-width:767px) {
+    display: inline-block;
+    margin: 0;
+  }
+}
+.navbar-right {
+  @media (max-width:767px) {
+    display: inline-block;
+    margin: 0;
+  }
+}
