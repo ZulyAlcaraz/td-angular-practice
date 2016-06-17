@@ -1,7 +1,6 @@
 /**
  *  Side menu styles
  */
-
 .menu{
   background: #5b4e8b;
   background: linear-gradient(to bottom, #5b4e8b 0%, #5b4e8b 9%, #5b4e8b 49%, #261e44 100%);
@@ -13,31 +12,29 @@
   width: 0;
   z-index: 1000;
 
-  .active {
-    a {
-      border-color: #fff;
-      color: #fff;
-    }
-  }
-
   .menu-nav {
     ul {
       list-style: none;
       padding-left: 10px;
     }
     li {
-      line-height: 40px;
+      line-height: 20px;
       text-indent: 20px;
       padding-bottom: 10px;
     }
     li:nth-child(n+2) {
       padding: 10px 20px;  
     }
+    .active {
+      a {
+        border-left: 2px solid rgba(255, 255, 255, 1);
+        color: rgba(255, 255, 255, 1);
+      }
+    }
     a {
       border-left: 2px solid rgba(255, 255, 255, 0.5);
       color: rgba(255, 255, 255, 0.5);
       display: block;
-      font-size: 1.2em;
       text-decoration: none;
       &:hover {
         border-color: #fff;

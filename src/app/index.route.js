@@ -31,22 +31,17 @@
       })
       .state('page.category', {
         url: '/category/:id?page',
-        views: {
-          'content@' : {
-            templateUrl: 'app/main/main.html',
-            controller: 'MainController',
-            controllerAs: 'vm'
-          }
-        },
         resolve:{
           /** @ngInject */
           videos: function ($stateParams, VideoFactory) {
-            console.log('$stateParams', $stateParams);
-            var videoParams = {
-              page: $stateParams.page,
-              per_page: 12
-            };
-            return VideoFactory.getByCategoryId($stateParams.id, videoParams).$promise;
+            if ($stateParams.id) {
+              var videoParams = {
+                page: $stateParams.page,
+                per_page: 12
+              };
+              return VideoFactory.getByCategoryId($stateParams.id, videoParams).$promise;
+            }
+            
           }
         },
         onEnter: function ($state, $stateParams, categoryList) {
@@ -55,6 +50,13 @@
               id: categoryList[0].id,
               page: 1
             });
+          }
+        },
+        views: {
+          'content@' : {
+            templateUrl: 'app/main/main.html',
+            controller: 'MainController',
+            controllerAs: 'vm'
           }
         }
       });
