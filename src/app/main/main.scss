@@ -2,87 +2,64 @@
  *  Main styles
  */
 
-* {
-  margin: 0;
-}
-html, body {
-	font-family: 'Avenir LT Regular';
-	font-size: 14px;
-  height: 100%;
-}
 .main-container {
-  padding-left: 300px;
+  padding-left: $aside-width;
+
+  .videos-section {
+    padding: 15px;
+    margin-top: -20px;
+    ul {
+      list-style: none;
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+    img{
+      display: block;
+      margin: auto;
+    }
+    figcaption {
+      color: $color-purple;
+      font-family: $font-bold;
+      padding-top: 10px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .pagination-container {
+      a {
+        color: $color-purple;
+      }
+      .active a {
+        background-color: $color-purple !important;
+        border-color: $color-purple;
+        color: #fff;
+      }
+    }
+  }
+
   @media (max-width: 992px) {
     padding-left: 0;
   }
 }
-.page-wrap {
-  min-height: 100%;
-  margin-bottom: -50px; 
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  height: 50px; 
-}
-.site-footer {
-  background-color: $color-light-gray;
-  border: 1px solid $color-gray;
-  line-height: 50px;
-  padding-right: 15px;
-}
 
-.videos-section {
-  ul {
-    list-style: none;
-    a {
-      cursor: pointer;
-      text-decoration: none;
-    }
-  }
-  img{
-    display: block;
-    margin: auto;
-  }
-  figcaption {
-    color: $color-purple;
-    font-family: 'Avenir LT Bold';
-    text-align: left;
-    text-transform: uppercase;
-  }
-  .pagination-container {
-    a {
-      color: $color-purple;
-    }
-    .active a {
-      background-color: $color-purple !important;
-      border-color: $color-purple;
-      color: #fff;
-    }
-  }
-}
-
-.grid {
+.grid-wrapper {
+  .grid {
     list-style: none;
     background: #ffffff;
-    box-sizing: border-box;
-    -moz-box-sizing : border-box;
-    -webkit-transition: all 0.6s ease-out; 
+    box-sizing: border-box; 
     transition: all 0.6s ease-out; 
-}
-.grid-img {
+  }
+  .grid-img {
     width: 100%;
-    vertical-align: middle;
-    -webkit-transition: opacity 0.6s ease-out;  
+    vertical-align: middle; 
     transition: opacity 0.6s ease-out;
     background-color: #fff;
     opacity: 0; 
     visibility: hidden;
-}
- 
-.grid-img.img-loaded{
+  }
+  .grid-img.img-loaded{
     visibility: visible;
     opacity: 1;
+  }
 }

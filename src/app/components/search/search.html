@@ -1,8 +1,13 @@
-<div class="navbar-form navbar-right pull-right">
-	<div class="right-inner-addon">
-    <i class="glyphicon glyphicon-search"></i>
-    <input type="search"
-           class="form-control" 
-           placeholder="{{ 'global.placeholders.SEARCH_VIDEOS' | translate }}" />
-  </div>
+<div class="search-section">
+	<form class="form-inline">
+	  <div class="form-group">
+	    <div class="input-group">
+	      <input type="search" class="form-control" placeholder="{{ 'global.placeholders.SEARCH_VIDEOS' | translate }}" ng-model="query" ng-keypress="keyPress($event)" />
+	      <div class="input-group-addon" ng-click="search()">
+	      	<i class="glyphicon glyphicon-search" ></i>
+	      </div>
+	    </div>
+	  </div>
+	</form>
 </div>
+

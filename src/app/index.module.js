@@ -14,7 +14,8 @@
       'ui.bootstrap',
       'pascalprecht.translate',
       'tmh.dynamicLocale',
-      'angularGrid'
+      'angularGrid',
+      'angularMoment'
     ]);
 
 })();

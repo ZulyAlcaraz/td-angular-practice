@@ -1,0 +1,53 @@
+<section class="main-container">
+	<side-menu list-items="vm.categoryList"></side-menu>
+	<header class="navbar navbar-default">
+	  <div class="navbar-header">
+	    <button type="button" class="btn btn-default show-menu">
+	      <i class="glyphicon glyphicon-menu-hamburger text-muted"></i>
+	    </button>
+	  </div>
+	  <div class="navbar-form navbar-right">
+	  	<search></search>
+	  </div>
+	</header>
+
+	<section class="video-section">
+		<div class="video-wrapper">
+			<div class="embed-responsive embed-responsive-16by9">
+	      <div class="video-wrapper-inner" ng-bind-html="vm.videoHtml">
+	      </div>
+	    </div>
+		</div>
+    
+
+    <div class="social-wrapper row text-muted">
+	    <div class="social text-right pull-right">
+	    	<i class="glyphicon glyphicon-comment"></i>{{vm.video.metadata.connections.comments.total | thousandSuffix:1}}
+	    </div>
+
+	    <div class="social text-right pull-right">
+	    	<i class="glyphicon glyphicon-star"></i>
+	    	{{vm.video.metadata.connections.likes.total | thousandSuffix:1}}
+	    </div>
+	    
+	    <div class="social text-right pull-right">
+	    	<i class="glyphicon glyphicon-play"></i>{{vm.video.stats.plays | thousandSuffix:1}}
+	    </div>
+  	</div>
+
+  	<div class="video-info-wrapper">
+	    <div class="video-info-header">
+	      <img class="img-circle video-info-img" ng-src="{{vm.video.user.pictures.sizes[1].link}}" alt="" />
+	      <h1 class="video-info-title">{{vm.video.name}}</h1>
+	      <p>
+	        {{'global.FROM' | translate}} 
+	        <span class="user-name">{{vm.video.user.name}}</span>
+	        <span class="divider">|</span>
+	        <span am-time-ago="vm.video.created_time"></span>
+	      </p>
+	    </div>
+
+	    <p class="video-info-description">{{vm.video.description}}</p>
+	  </div>
+	</section>
+</section>

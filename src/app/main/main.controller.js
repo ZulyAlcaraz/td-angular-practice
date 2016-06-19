@@ -14,13 +14,6 @@
 		vm.page = $stateParams.page;
 		vm.totalItems = videos.total
 		vm.videos = videos.data;
-
-		vm.gridOptions = {
-			cssGrid : false,
-			refreshOnImgLoad: false,
-			gridWidth: 295,
-			gutterSize: 10
-		};
 		
 		vm.videos.map(function (video) {
 			video.id = video.uri.split('/').pop();
@@ -28,6 +21,10 @@
 
 		vm.changePage = function () {
 			$state.go('.', { page: vm.page});
+		};
+
+		vm.goToVideo = function (id) {
+			$state.go('page.detail', {'id': id });
 		};
 	}
 

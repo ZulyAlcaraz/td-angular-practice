@@ -2,8 +2,8 @@
  *  Side menu styles
  */
 .menu{
-  background: #5b4e8b;
-  background: linear-gradient(to bottom, #5b4e8b 0%, #5b4e8b 9%, #5b4e8b 49%, #261e44 100%);
+  background: $color-purple;
+  background: linear-gradient(to bottom, $color-purple 0%, $color-purple 9%, $color-purple 49%, #261e44 100%);
   height: 100%;
   left: 0;
   overflow-y: auto;
@@ -54,7 +54,7 @@
     }
   }
   @media (min-width: 992px) {
-    width: 300px;
+    width: $aside-width;
   }
 }
 
@@ -65,5 +65,5 @@
 }
 
 .show{
-  width: 300px;
+  width: $aside-width;
 }

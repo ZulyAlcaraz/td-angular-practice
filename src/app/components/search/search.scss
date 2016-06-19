@@ -1,0 +1,28 @@
+/**
+ *  Search styles
+ */
+
+.search-section {
+	display: inline-block;
+	.input-group {
+		input {
+			border-right: 0;
+			border-bottom-left-radius: 30px;
+			border-top-left-radius: 30px;
+		}
+		.input-group-addon {
+			background-color: #fff;
+			border-top-right-radius: 30px;
+			border-bottom-right-radius: 30px;
+			i {
+				color: #000;
+				font-size: 17px;
+			}
+			&:focus {
+				border-color: #ccc;
+			  box-shadow: none;
+			  outline: 0 none;
+			}
+		}
+	}
+}

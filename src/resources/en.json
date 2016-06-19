@@ -3,6 +3,7 @@
 		"POWERED_BY" : "Powered by",
 		"placeholders" : {
 			"SEARCH_VIDEOS" : "Search videos"
-		}
+		},
+		"FROM" : "from"
 	}
 }

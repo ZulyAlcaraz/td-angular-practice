@@ -17,6 +17,18 @@
         }).get();
       };
 
+      videos.getByQuery = function (params) {
+        return $resource(API_VIMEO.host + '/videos', {}, {
+          get: {
+            params: params
+          }
+        }).get();
+      };
+
+      videos.getById = function (videoId) {
+        return $resource(API_VIMEO.host + 'videos/' + videoId, {}, {}).get();
+      };
+
       return videos;
   }
 })();
