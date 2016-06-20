@@ -14,7 +14,7 @@
 	<section class="videos-section">
 
 		<div class="grid-wrapper">
-			<ul class="dynamic-grid" angular-grid="pics" ag-grid-width="300" ag-gutter-size="15" ag-id="gallery" ag-refresh-on-img-load="false" >
+			<ul class="dynamic-grid" angular-grid="vm.videos" ag-grid-width="300" ag-gutter-size="15" ag-id="gallery" >
 	     <li data-ng-repeat="video in vm.videos" class="grid">
 	     	<a ng-click="vm.goToVideo(video.id)">
 	     		<figure>
