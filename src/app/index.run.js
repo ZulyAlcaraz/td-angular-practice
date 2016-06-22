@@ -10,26 +10,26 @@
 
     $http.defaults.headers.common.Authorization = 'Bearer ' + API_VIMEO.token;
 
-    var searchEvent = $rootScope.$on('search:query', function (event, query) {
+    var deregistrationSearchEvent = $rootScope.$on('search:query', function (event, query) {
       $state.go('page.search', { query: query, page: 1 });
     });
 
-    var stateChangeStart = $rootScope.$on('$stateChangeStart', function(event, toState) {
+    var deregistrationStateChangeStart = $rootScope.$on('$stateChangeStart', function(event, toState) {
       if (toState.resolve) {
         $rootScope.$broadcast('loader:startLoad', '');
       }
     });
 
-    var stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+    var deregistrationStateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function(event, toState) {
       if (toState.resolve) {
         $rootScope.$broadcast('loader:endLoad', '');
       }
     });
 
     $rootScope.$on('$destroy', function () {
-      searchEvent();
-      stateChangeStart();
-      stateChangeSuccess();
+      deregistrationSearchEvent();
+      deregistrationStateChangeStart();
+      deregistrationStateChangeSuccess();
     });
 
     $log.debug('runBlock end');

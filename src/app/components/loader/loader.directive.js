@@ -10,6 +10,8 @@
     var directive = {
       templateUrl:'app/components/loader/loader.html',
       restrict :'E',
+      scope: {},
+      replace: true,
       link: function (scope, element) {
         scope.$on('loader:startLoad', function () {
           if(element.hasClass('hidde-loader')){

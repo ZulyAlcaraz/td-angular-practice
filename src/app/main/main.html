@@ -18,26 +18,26 @@
 	     <li data-ng-repeat="video in vm.videos" class="grid">
 	     	<a ng-click="vm.goToVideo(video.id)">
 	     		<figure>
-	            <img ng-src="{{video.pictures.sizes[2].link}}" 
-	            	class="grid-img" 
-	            	data-actual-width="{{videoItem.pictures.sizes[2].width}}"  
+	            <img ng-src="{{video.pictures.sizes[2].link}}"
+	            	class="grid-img"
+	            	data-actual-width="{{videoItem.pictures.sizes[2].width}}"
 	            	data-actual-height="{{videoItem.pictures.sizes[2].height}}" />
-	          <figcaption>{{video.name}}</figcaption>
+	          <figcaption class="ellipsis">{{video.name}}</figcaption>
 	        </figure>
 	     	</a>
 	     </li>
 	 		</ul>
 		</div>
-		
+
  		<div class="text-center pagination-container">
  			<uib-pagination
-	 			total-items="vm.totalItems" 
-	 			ng-model="vm.page" 
-	 			max-size="vm.maxSize" 
+	 			total-items="vm.totalItems"
+	 			ng-model="vm.page"
+	 			max-size="vm.maxSize"
 	 			class="pagination-sm"
-	      items-per-page="vm.perPage" 
-	      ng-change="vm.changePage()" 
-	      boundary-link-numbers="true" 
+	      items-per-page="vm.perPage"
+	      ng-change="vm.changePage()"
+	      boundary-link-numbers="true"
 	      rotate="false">
 	     </uib-pagination>
  		</div>

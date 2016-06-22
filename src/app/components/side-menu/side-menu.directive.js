@@ -9,6 +9,7 @@
   function sideMenuDirective ($document) {
     var directive = {
       restrict :'E',
+      replace: true,
       scope: {
         listItems: '='
       },

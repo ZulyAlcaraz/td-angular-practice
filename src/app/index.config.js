@@ -12,16 +12,16 @@
 
     // Set configuration for translate
     $translateProvider.useMissingTranslationHandlerLog();
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider
       .useStaticFilesLoader({
-          prefix: 'resources/',
+          prefix: 'languages/',
           suffix: '.json'
       })
       .registerAvailableLanguageKeys(['en', 'es'], LOCALES.localesMap)
       .preferredLanguage(LOCALES.preferredLocale)
       .fallbackLanguage(LOCALES.preferredLocale);
-    
+
     $translateProvider.useLocalStorage();
     tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
   }

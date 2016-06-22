@@ -17,15 +17,15 @@
         resolve: {
           /** @ngInject */
           categories: function (CategoryFactory) {
-            return CategoryFactory.get().$promise;
+            var categories = CategoryFactory.getCategories().$promise;
+            return categories.then(function (responseCategories) {
+              var categoriesId = CategoryFactory.getCategoriesId(responseCategories);
+              return categoriesId;
+            });
           },
           /** @ngInject */
           categoryList: function (CategoryFactory, categories) {
-            var categoryList = categories.data;
-            categoryList.map(function (category) {
-              category.id = category.uri.split('/').pop();
-            });
-            return categoryList;
+            return CategoryFactory.getCategoryList(categories);
           }
         }
       })
@@ -35,19 +35,17 @@
           /** @ngInject */
           videos: function ($stateParams, VideoFactory, PAGINATION) {
             if ($stateParams.id) {
-              var videoParams = {
-                page: $stateParams.page,
-                per_page: PAGINATION.perPage
-              };
-              return VideoFactory.getByCategoryId($stateParams.id, videoParams).$promise;
+              var videoParams = VideoFactory.getParamsConfiguration(null, $stateParams.page, PAGINATION.perPage);
+              return VideoFactory.getByCategoryId($stateParams.id, videoParams);
             }
-            
+
           }
         },
-        onEnter: function ($state, $stateParams, categoryList) {
-          if (!$stateParams.id && categoryList.length > 0) {
+        /** @ngInject */
+        onEnter: function ($state, $stateParams, categories) {
+          if (!$stateParams.id && categories.length > 0) {
             $state.go('page.category', {
-              id: categoryList[0].id,
+              id: categories[0].id,
               page: 1
             });
           }
@@ -66,15 +64,12 @@
           /** @ngInject */
           videos: function ($stateParams, VideoFactory, PAGINATION) {
             if ($stateParams.query) {
-              var videoParams = {
-                page: $stateParams.page,
-                per_page: PAGINATION.perPage,
-                query: $stateParams.query
-              };
-              return VideoFactory.getByQuery(videoParams).$promise;
+              var videoParams = VideoFactory.getParamsConfiguration($stateParams.query, $stateParams.page, PAGINATION.perPage);
+              return VideoFactory.getByQuery(videoParams);
             }
           }
         },
+        /** @ngInject */
         onEnter: function ($state, $stateParams, categoryList) {
           if (!$stateParams.query && categoryList.length > 0) {
             $state.go('page.category', {
@@ -97,11 +92,12 @@
           /** @ngInject */
           video: function ($stateParams, VideoFactory) {
             if ($stateParams.id) {
-              return VideoFactory.getById($stateParams.id).$promise;
+              return VideoFactory.getById($stateParams.id);
             }
-            
+
           }
         },
+        /** @ngInject */
         onEnter: function ($state, $stateParams, categoryList, video) {
           if (!video) {
             $state.go('page.category', {

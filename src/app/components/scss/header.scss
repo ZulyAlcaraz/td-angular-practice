@@ -18,7 +18,7 @@
   button {
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    @include font-size(2);
     left: 0;
     position: absolute;
     top: 10px;

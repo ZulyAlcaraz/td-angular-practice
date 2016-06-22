@@ -5,10 +5,10 @@
 	<nav class="menu-nav">
 		<ul>
 			<li class="menu-brand">
-				<img src="../../../assets/images/vimeotest-logo.svg" alt="">
+				<img src="assets/images/vimeotest-logo.svg" alt="">
 			</li>
 			<li ng-repeat="(key, item) in listItems | limitTo:8 track by $index" ui-sref-active="active">
-				<a ui-sref="page.category({ id: item.id, page: 1 })">{{item.name}}</a>
+				<a ui-sref="{{item.state}}({{item.params}})">{{item.name}}</a>
 			</li>
 		</ul>
 	</nav>

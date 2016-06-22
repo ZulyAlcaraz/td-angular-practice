@@ -10,6 +10,8 @@
     var directive = {
       templateUrl:'app/components/search/search.html',
       restrict :'E',
+      replace: true,
+      scope: {},
       link: function (scope) {
         scope.search = function () {
           if(scope.query){

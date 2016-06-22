@@ -4,15 +4,26 @@
 * {
   margin: 0;
 }
-html, body {
-	font-family: $font-regular;
-	font-size: $font-size-base;
+
+html {
+  font-family: $font-regular, Arial, sans-serif;
+  font-size: 62.5%;
   height: 100%;
+
+  body {
+    @include font-size(1.6);
+    height: 100%;
+  }
+
+}
+
+.ellipsis {
+  @include ellipsis;
 }
 
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -$footer-height; 
+  margin-bottom: -$footer-height;
   &:after {
 	  content: "";
 	  height: $footer-height;
@@ -23,7 +34,7 @@ html, body {
 .site-footer {
   background-color: $color-light-gray;
   border: 1px solid $color-gray;
-  height: $footer-height; 
+  height: $footer-height;
   line-height: $footer-height;
   padding-right: $padding-15;
 }
@@ -43,7 +54,7 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
-.uneditable-input:focus {   
+.uneditable-input:focus {
   border-color: #ccc;
   box-shadow: none;
   outline: 0 none;
