@@ -1,6 +1,9 @@
 /**
  *  Side menu styles
  */
+
+$aside-width: 300px !default;
+
 .menu{
   background: $color-purple;
   background: linear-gradient(to bottom, $color-purple 0%, $color-purple 9%, $color-purple 49%, #261e44 100%);
@@ -23,7 +26,7 @@
       padding-bottom: 10px;
     }
     li:nth-child(n+2) {
-      padding: 10px 20px;  
+      padding: 10px 20px;
     }
     .active {
       a {
@@ -61,6 +64,7 @@
 .close {
   color: #fff;
   opacity: 1;
+  margin: 0 10px;
   @media (min-width: 992px) {
     display: none;
   }

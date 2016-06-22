@@ -18,7 +18,13 @@
 
         var closeButtom = element[0].querySelector('.close-menu');
         var openButtom = $document[0].querySelector('.show-menu');
-        var aside = element[0].querySelector('.menu')
+        var aside = $document[0].querySelector('#menu');
+
+        scope.closeMenu = function () {
+          if (angular.element(aside).hasClass('show')) {
+            angular.element(aside).removeClass('show');
+          }
+        };
 
         angular.element(openButtom).on('click', function () {
           if (angular.element(aside).hasClass('show')) {
@@ -29,9 +35,7 @@
         });
 
         angular.element(closeButtom).on('click', function () {
-          if (angular.element(aside).hasClass('show')) {
-            angular.element(aside).removeClass('show');
-          }
+          scope.closeMenu();
         });
 
         scope.$on('$destroy', function () {
