@@ -36,7 +36,7 @@
 
       return categoryList;
     };
-    
+
     return category;
   }
 })();

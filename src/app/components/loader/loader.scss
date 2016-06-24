@@ -2,7 +2,7 @@
  *  Loader styles
  */
 .loader {
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
 	left: 0;
 	position: fixed;
@@ -14,15 +14,12 @@
 .hidde-loader {
 	visibility:  hidden;
 }
-.show-loader {
-	visibility: visible;
-}
 
 .cssload-container{
 	position:relative;
 	top: 45%;
 }
-	
+
 .cssload-whirlpool,
 .cssload-whirlpool::before,
 .cssload-whirlpool::after {
